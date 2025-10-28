@@ -10,16 +10,16 @@ function ProjectorHeader() {
   const location = useLocation();
 
   useEffect(() => {
-    // Stage 1: Show projector video (1.5 seconds)
+    // Stage 1: Show projector video (2 seconds)
     const projectorTimer = setTimeout(() => {
       setAnimationStage('projection');
-    }, 1500);
+    }, 2000);
 
     // Stage 2: Project text onto screen (1.5 seconds)
     const projectionTimer = setTimeout(() => {
       setAnimationStage('complete');
       setShowNav(true);
-    }, 3000);
+    }, 3500);
 
     return () => {
       clearTimeout(projectorTimer);
@@ -54,8 +54,12 @@ function ProjectorHeader() {
                 autoPlay
                 muted
                 playsInline
+                loop
+                onError={(e) => console.error('Video failed to load:', e)}
+                onLoadedData={() => console.log('Video loaded successfully')}
               >
                 <source src="/videos/105438-670487243.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
               </video>
               
               {/* Projector light beam effect */}
