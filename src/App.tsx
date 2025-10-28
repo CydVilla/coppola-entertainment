@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
-  const basename = import.meta.env.DEV ? '/' : '/coppola-entertainment';
+  const basename = import.meta.env.MODE === 'production' ? '/coppola-entertainment' : '/';
   
   return (
     <Router basename={basename}>
