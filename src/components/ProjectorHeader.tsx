@@ -58,7 +58,7 @@ function ProjectorHeader() {
                 onError={(e) => console.error('Video failed to load:', e)}
                 onLoadedData={() => console.log('Video loaded successfully')}
               >
-                <source src="/videos/105438-670487243.mp4" type="video/mp4" />
+                <source src={`${import.meta.env.BASE_URL}videos/105438-670487243.mp4`} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               
