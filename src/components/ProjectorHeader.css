@@ -413,14 +413,58 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
+
+/* Tablet - Large (1024px - 1200px) */
+@media (max-width: 1200px) {
   .projector-header {
-    padding: 30px 40px;
-    min-height: 150px;
+    padding: 40px 60px;
+    min-height: 200px;
   }
   
   .header-container {
-    min-height: 100px;
+    min-height: 130px;
+  }
+  
+  .logo-text.projected .logo-line-1 {
+    font-size: 4rem;
+    letter-spacing: 12px;
+  }
+  
+  .logo-text.projected .logo-line-2 {
+    font-size: 2.5rem;
+    letter-spacing: 16px;
+  }
+  
+  .logo-text.solid .logo-line-1 {
+    font-size: 3.2rem;
+    letter-spacing: 12px;
+  }
+  
+  .logo-text.solid .logo-line-2 {
+    font-size: 2rem;
+    letter-spacing: 14px;
+  }
+  
+  .reel-graphic {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .reel-center {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) {
+  .projector-header {
+    padding: 35px 40px;
+    min-height: 170px;
+  }
+  
+  .header-container {
+    min-height: 110px;
   }
   
   .logo-text.projected .logo-line-1 {
@@ -456,42 +500,46 @@
   .nav-link {
     font-size: 1rem;
     padding: 6px 12px;
+    gap: 12px;
   }
 }
 
-@media (max-width: 768px) {
+/* Mobile - Large (481px - 767px) */
+@media (max-width: 767px) {
   .projector-header {
-    padding: 25px 40px;
-    min-height: 130px;
+    padding: 25px 30px;
+    min-height: 150px;
   }
   
   .header-container {
     flex-wrap: wrap;
-    min-height: 85px;
+    min-height: 100px;
   }
   
   .logo-container {
-    gap: 15px;
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
   }
   
   .logo-text.projected .logo-line-1 {
-    font-size: 2.8rem;
-    letter-spacing: 8px;
+    font-size: 2.5rem;
+    letter-spacing: 6px;
   }
   
   .logo-text.projected .logo-line-2 {
-    font-size: 1.7rem;
-    letter-spacing: 12px;
+    font-size: 1.5rem;
+    letter-spacing: 10px;
   }
   
   .logo-text.solid .logo-line-1 {
-    font-size: 2.3rem;
-    letter-spacing: 8px;
+    font-size: 2rem;
+    letter-spacing: 6px;
   }
   
   .logo-text.solid .logo-line-2 {
-    font-size: 1.4rem;
-    letter-spacing: 10px;
+    font-size: 1.3rem;
+    letter-spacing: 8px;
   }
   
   .reel-graphic {
@@ -504,18 +552,101 @@
     height: 52px;
   }
   
+  .reel-hole {
+    width: 7px;
+    height: 7px;
+  }
+  
+  .ring-1 { width: 60px; height: 60px; }
+  .ring-2 { width: 66px; height: 66px; }
+  .ring-3 { width: 72px; height: 72px; }
+  
   .nav-desktop {
     display: none;
   }
   
   .mobile-menu-toggle {
     display: block;
+    position: absolute;
+    right: 30px;
+    top: 20px;
   }
   
   .mobile-nav {
     display: flex;
     width: 100%;
     order: 4;
+    margin-top: 10px;
+  }
+  
+  .projection-screen {
+    width: 140%;
+    height: 160%;
+  }
+}
+
+/* Mobile - Small (320px - 480px) */
+@media (max-width: 480px) {
+  .projector-header {
+    padding: 20px 20px;
+    min-height: 140px;
+  }
+  
+  .header-container {
+    min-height: 90px;
+  }
+  
+  .logo-container {
+    gap: 10px;
+  }
+  
+  .logo-text.projected .logo-line-1 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+  
+  .logo-text.projected .logo-line-2 {
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+  }
+  
+  .logo-text.solid .logo-line-1 {
+    font-size: 1.7rem;
+    letter-spacing: 4px;
+  }
+  
+  .logo-text.solid .logo-line-2 {
+    font-size: 1.1rem;
+    letter-spacing: 6px;
+  }
+  
+  .reel-graphic {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .reel-center {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .reel-hole {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .ring-1 { width: 52px; height: 52px; }
+  .ring-2 { width: 56px; height: 56px; }
+  .ring-3 { width: 60px; height: 60px; }
+  
+  .mobile-menu-toggle {
+    right: 20px;
+    top: 15px;
+  }
+  
+  .mobile-nav-link {
+    padding: 12px 15px;
+    font-size: 0.95rem;
   }
 }
 

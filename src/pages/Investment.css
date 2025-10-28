@@ -305,3 +305,100 @@
   }
 }
 
+@media (max-width: 480px) {
+  .investment-page {
+    padding: 15px 10px;
+  }
+  
+  .investment-container {
+    padding: 25px 15px;
+    border-radius: 8px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .title-underline {
+    width: 150px;
+  }
+  
+  .featured-investment {
+    gap: 20px;
+  }
+  
+  .investment-poster {
+    max-width: 240px;
+  }
+  
+  .project-title {
+    font-size: 1.7rem;
+  }
+  
+  .investment-info-box {
+    padding: 15px;
+  }
+  
+  .investment-info-box h3 {
+    font-size: 1.1rem;
+  }
+  
+  .page-count {
+    font-size: 1rem;
+  }
+  
+  .logline-section,
+  .investment-plan,
+  .investment-potential,
+  .funding-details {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .logline-section h4,
+  .investment-plan h3,
+  .investment-potential h3,
+  .funding-details h3 {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .logline-section p,
+  .investment-plan p,
+  .investment-potential p,
+  .funding-details p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .synopsis-section {
+    padding: 20px 15px;
+  }
+  
+  .synopsis-section h3 {
+    font-size: 1.4rem;
+  }
+  
+  .synopsis-content p {
+    font-size: 0.9rem;
+  }
+  
+  .contact-cta {
+    padding: 25px 15px;
+  }
+  
+  .contact-cta h3 {
+    font-size: 1.4rem;
+  }
+  
+  .contact-cta p {
+    font-size: 0.95rem;
+  }
+  
+  .contact-button {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+  }
+}
+

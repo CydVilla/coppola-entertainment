@@ -347,10 +347,19 @@
 @media (max-width: 768px) {
   .project-modal {
     max-height: 95vh;
+    margin: 10px;
   }
   
   .modal-content {
     padding: 20px;
+  }
+  
+  .modal-close {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+    top: 10px;
+    right: 10px;
   }
   
   .modal-header {
@@ -359,24 +368,51 @@
   }
   
   .modal-poster {
-    max-width: 300px;
+    max-width: 280px;
     margin: 0 auto;
   }
   
   .modal-header-info h2 {
     font-size: 2rem;
+    text-align: center;
   }
   
   .modal-tagline {
     font-size: 1rem;
+    text-align: center;
+  }
+  
+  .modal-meta {
+    align-items: center;
+  }
+  
+  .meta-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+  }
+  
+  .meta-label {
+    min-width: auto;
+  }
+  
+  .production-info p {
+    font-size: 1rem;
+    text-align: center;
   }
   
   .modal-section h3 {
     font-size: 1.5rem;
   }
   
+  .modal-section p {
+    font-size: 1rem;
+  }
+  
   .modal-details-grid {
     grid-template-columns: 1fr;
+    padding: 15px;
   }
   
   .cast-list,
@@ -394,6 +430,97 @@
   
   .trailer-icon {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-modal {
+    margin: 5px;
+    border-radius: 8px;
+  }
+  
+  .modal-content {
+    padding: 15px;
+  }
+  
+  .modal-close {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+  
+  .modal-poster {
+    max-width: 220px;
+  }
+  
+  .modal-header-info h2 {
+    font-size: 1.6rem;
+  }
+  
+  .modal-tagline {
+    font-size: 0.9rem;
+  }
+  
+  .meta-item {
+    font-size: 0.9rem;
+  }
+  
+  .production-info {
+    padding: 12px 15px;
+  }
+  
+  .production-info p {
+    font-size: 0.95rem;
+  }
+  
+  .modal-section {
+    margin-bottom: 20px;
+  }
+  
+  .modal-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  
+  .modal-section p {
+    font-size: 0.95rem;
+  }
+  
+  .modal-details-grid {
+    padding: 12px;
+    gap: 15px;
+  }
+  
+  .detail-item h4 {
+    font-size: 0.9rem;
+  }
+  
+  .detail-item p {
+    font-size: 0.9rem;
+  }
+  
+  .trailer-section {
+    padding: 15px;
+  }
+  
+  .trailer-section h3 {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .trailer-icon {
+    font-size: 1.3rem;
+  }
+  
+  .awards-list li,
+  .cast-list li {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+  
+  .award-icon {
+    font-size: 1rem;
   }
 }
 

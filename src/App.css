@@ -105,7 +105,23 @@
 @media (max-width: 768px) {
   .film-border-left,
   .film-border-right {
-    width: 30px;
+    width: 25px;
+  }
+  
+  .theater-stage {
+    padding: 15px;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 480px) {
+  .film-border-left,
+  .film-border-right {
+    width: 20px;
+  }
+  
+  .theater-stage {
+    padding: 10px;
   }
 }
 

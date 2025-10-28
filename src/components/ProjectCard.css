@@ -151,17 +151,71 @@
 }
 
 @media (max-width: 768px) {
+  .poster-container {
+    border: 2px solid #c66302;
+  }
+  
+  .overlay-content {
+    padding: 15px;
+  }
+  
   .overlay-content h3 {
     font-size: 1.2rem;
   }
   
   .tagline {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
   
   .view-details-btn {
     font-size: 0.9rem;
     padding: 8px 16px;
+  }
+  
+  .project-status {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .poster-container {
+    border-radius: 6px;
+  }
+  
+  .overlay-content {
+    padding: 12px;
+  }
+  
+  .overlay-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .tagline {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .view-details-btn {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+  }
+  
+  .project-status {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    top: 8px;
+    right: 8px;
+  }
+  
+  .placeholder-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+  
+  .placeholder-text {
+    font-size: 1rem;
+    padding: 0 15px;
   }
 }
 
