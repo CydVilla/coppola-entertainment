@@ -374,7 +374,7 @@
 
 /* Mobile Menu */
 .mobile-menu-toggle {
-  display: none;
+  display: none; /* Hidden by default on desktop */
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid #c66302;
   color: #c66302;
@@ -390,7 +390,6 @@
   touch-action: manipulation;
   min-width: 50px;
   min-height: 50px;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -597,16 +596,16 @@
   }
   
   .nav-desktop {
-    display: none;
+    display: none !important;
   }
   
   .mobile-menu-toggle {
-    display: flex;
+    display: flex !important; /* Show on mobile only */
     position: static;
   }
   
   .mobile-nav {
-    display: flex;
+    display: flex !important;
     width: 100%;
     position: absolute;
     left: 0;
