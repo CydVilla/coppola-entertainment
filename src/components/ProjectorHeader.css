@@ -1,0 +1,521 @@
+.projector-header {
+  background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+  padding: 40px 80px;
+  border-bottom: 3px solid #c66302;
+  box-shadow: 0 5px 20px rgba(198, 99, 2, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 180px;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+  min-height: 120px;
+}
+
+/* ===== STAGE 1: PROJECTOR VIDEO ===== */
+.projector-stage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.projector-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  filter: brightness(0.6) contrast(1.2);
+}
+
+.projector-beam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(198, 99, 2, 0.2) 50%,
+    transparent 100%
+  );
+  transform: translateX(-50%) scaleY(1.5);
+  filter: blur(20px);
+  animation: projectorFlicker 0.15s infinite;
+}
+
+@keyframes projectorFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+}
+
+/* ===== LOGO CONTAINER ===== */
+.logo-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+  z-index: 15;
+}
+
+/* ===== PROJECTION SCREEN ===== */
+.projection-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 150%;
+  background: 
+    /* Film grain texture overlay */
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 2px
+    ),
+    /* Subtle gradient - more muted cream/beige */
+    radial-gradient(
+      ellipse at center,
+      #f0ede5 0%,
+      #e8e3d8 30%,
+      #ddd8cc 60%,
+      #d0cbbf 100%
+    );
+  border-radius: 12px;
+  box-shadow: 
+    0 0 40px rgba(240, 237, 229, 0.4),
+    inset 0 0 60px rgba(0, 0, 0, 0.08),
+    inset 0 0 100px rgba(198, 99, 2, 0.02);
+  z-index: -1;
+  opacity: 0.95;
+  /* Add film texture */
+  background-blend-mode: multiply;
+}
+
+/* Subtle film texture animation */
+.projection-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.02) 2px,
+      transparent 4px
+    );
+  opacity: 0.3;
+  animation: filmScroll 20s linear infinite;
+}
+
+@keyframes filmScroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
+
+/* ===== FILM REEL ICON ===== */
+.logo-reel {
+  flex-shrink: 0;
+}
+
+.reel-graphic {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 20px rgba(198, 99, 2, 0.7));
+}
+
+.reel-center {
+  width: 68px;
+  height: 68px;
+  background: radial-gradient(circle, #c66302 0%, #8b4500 100%);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 
+    0 0 25px rgba(198, 99, 2, 0.8),
+    inset 0 0 12px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.reel-holes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.reel-hole {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.reel-hole:nth-child(1) { top: 10%; left: 50%; transform: translateX(-50%); }
+.reel-hole:nth-child(2) { top: 25%; right: 15%; }
+.reel-hole:nth-child(3) { top: 50%; right: 10%; transform: translateY(-50%); }
+.reel-hole:nth-child(4) { bottom: 25%; right: 15%; }
+.reel-hole:nth-child(5) { bottom: 10%; left: 50%; transform: translateX(-50%); }
+.reel-hole:nth-child(6) { bottom: 25%; left: 15%; }
+.reel-hole:nth-child(7) { top: 50%; left: 10%; transform: translateY(-50%); }
+.reel-hole:nth-child(8) { top: 25%; left: 15%; }
+
+.reel-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #c66302;
+}
+
+.ring-1 {
+  width: 76px;
+  height: 76px;
+  opacity: 0.6;
+}
+
+.ring-2 {
+  width: 83px;
+  height: 83px;
+  opacity: 0.4;
+}
+
+.ring-3 {
+  width: 90px;
+  height: 90px;
+  opacity: 0.2;
+}
+
+/* ===== LOGO TEXT ===== */
+.logo-text {
+  text-align: center;
+  transition: all 0.8s ease;
+}
+
+/* Projected state - glowing with flicker */
+.logo-text.projected .logo-line-1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #c66302;
+  letter-spacing: 14px;
+  line-height: 1;
+  text-shadow: 
+    0 0 30px rgba(198, 99, 2, 0.9),
+    0 0 50px rgba(198, 99, 2, 0.6),
+    3px 3px 6px rgba(0, 0, 0, 0.8);
+  animation: textFlicker 0.3s infinite;
+}
+
+.logo-text.projected .logo-line-2 {
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: #d4af37;
+  letter-spacing: 18px;
+  margin-top: 12px;
+  text-shadow: 
+    0 0 25px rgba(212, 175, 55, 0.8),
+    0 0 45px rgba(212, 175, 55, 0.5),
+    2px 2px 5px rgba(0, 0, 0, 0.8);
+  animation: textFlicker 0.3s infinite 0.15s;
+}
+
+/* Solid state - clean and professional */
+.logo-text.solid .logo-line-1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #c66302;
+  letter-spacing: 12px;
+  line-height: 1;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 15px rgba(198, 99, 2, 0.4);
+}
+
+.logo-text.solid .logo-line-2 {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #d4af37;
+  letter-spacing: 16px;
+  margin-top: 10px;
+  text-shadow: 
+    1px 1px 3px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.logo-line-1,
+.logo-line-2 {
+  transition: all 0.8s ease;
+}
+
+@keyframes textFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.97; }
+}
+
+/* Projection Effects */
+.projection-grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+  pointer-events: none;
+  opacity: 0.3;
+  animation: grainMove 1s infinite;
+  z-index: 20;
+}
+
+@keyframes grainMove {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, 2%); }
+  50% { transform: translate(2%, -2%); }
+  75% { transform: translate(-2%, -2%); }
+}
+
+.projection-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.3) 70%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  pointer-events: none;
+  z-index: 21;
+}
+
+/* Removed duplicate/unnecessary final logo styles - using single logo container now */
+
+/* ===== NAVIGATION ===== */
+.main-nav {
+  flex-shrink: 0;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-style: italic;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #c66302;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+.nav-link:hover {
+  color: #c66302;
+  text-shadow: 0 0 10px rgba(198, 99, 2, 0.5);
+}
+
+.nav-link.active {
+  color: #c66302;
+  font-weight: bold;
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: 2px solid #c66302;
+  color: #c66302;
+  font-size: 1.5rem;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: #c66302;
+  color: #000;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #000;
+  border-top: 2px solid #c66302;
+  overflow: hidden;
+}
+
+.mobile-nav-link {
+  color: #d4af37;
+  text-decoration: none;
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background: #1a1a1a;
+  color: #c66302;
+  padding-left: 30px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .projector-header {
+    padding: 30px 40px;
+    min-height: 150px;
+  }
+  
+  .header-container {
+    min-height: 100px;
+  }
+  
+  .logo-text.projected .logo-line-1 {
+    font-size: 3.2rem;
+    letter-spacing: 10px;
+  }
+  
+  .logo-text.projected .logo-line-2 {
+    font-size: 2rem;
+    letter-spacing: 14px;
+  }
+  
+  .logo-text.solid .logo-line-1 {
+    font-size: 2.8rem;
+    letter-spacing: 10px;
+  }
+  
+  .logo-text.solid .logo-line-2 {
+    font-size: 1.7rem;
+    letter-spacing: 12px;
+  }
+  
+  .reel-graphic {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .reel-center {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .nav-link {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projector-header {
+    padding: 25px 40px;
+    min-height: 130px;
+  }
+  
+  .header-container {
+    flex-wrap: wrap;
+    min-height: 85px;
+  }
+  
+  .logo-container {
+    gap: 15px;
+  }
+  
+  .logo-text.projected .logo-line-1 {
+    font-size: 2.8rem;
+    letter-spacing: 8px;
+  }
+  
+  .logo-text.projected .logo-line-2 {
+    font-size: 1.7rem;
+    letter-spacing: 12px;
+  }
+  
+  .logo-text.solid .logo-line-1 {
+    font-size: 2.3rem;
+    letter-spacing: 8px;
+  }
+  
+  .logo-text.solid .logo-line-2 {
+    font-size: 1.4rem;
+    letter-spacing: 10px;
+  }
+  
+  .reel-graphic {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .reel-center {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .nav-desktop {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .mobile-nav {
+    display: flex;
+    width: 100%;
+    order: 4;
+  }
+}
+

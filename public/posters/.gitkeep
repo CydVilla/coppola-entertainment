@@ -1,0 +1,20 @@
+# Movie Posters Directory
+
+Place all movie poster images in this folder.
+
+## Required Files:
+- redskin.jpg
+- providence.jpg
+- seaside.jpg
+- jesus-mary-joey.jpg
+- angels-dance.jpg
+- tonys-turf.jpg
+- johnny-coppola.jpg
+- doctor-egelman.jpg
+
+## Image Specifications:
+- Format: JPG or PNG
+- Aspect Ratio: 2:3 (portrait orientation)
+- Recommended Size: 600x900px minimum
+- Keep file sizes optimized for web (under 500KB each)
+

@@ -1,0 +1,111 @@
+.app-container {
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/theater-bg.jpg') center/cover no-repeat fixed;
+  background-color: #0a0a0a;
+}
+
+.theater-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.8) 70%),
+    repeating-linear-gradient(
+      90deg,
+      #8b0000 0px,
+      #8b0000 2px,
+      #a00000 2px,
+      #a00000 50px,
+      #8b0000 50px,
+      #8b0000 52px
+    );
+  opacity: 0.15;
+}
+
+.theater-stage {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Film strip borders */
+.film-border-left,
+.film-border-right {
+  position: fixed;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  background: #000;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.film-border-left {
+  left: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      #000 0px,
+      #000 30px,
+      #c66302 30px,
+      #c66302 35px,
+      #000 35px,
+      #000 45px,
+      #c66302 45px,
+      #c66302 50px
+    );
+  box-shadow: inset -5px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.film-border-right {
+  right: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      #000 0px,
+      #000 30px,
+      #c66302 30px,
+      #c66302 35px,
+      #000 35px,
+      #000 45px,
+      #c66302 45px,
+      #c66302 50px
+    );
+  box-shadow: inset 5px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Film perforation holes */
+.film-border-left::after,
+.film-border-right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 25px,
+      rgba(0, 0, 0, 0.8) 25px,
+      rgba(0, 0, 0, 0.8) 30px,
+      transparent 30px,
+      transparent 40px,
+      rgba(0, 0, 0, 0.8) 40px,
+      rgba(0, 0, 0, 0.8) 45px
+    );
+}
+
+@media (max-width: 768px) {
+  .film-border-left,
+  .film-border-right {
+    width: 30px;
+  }
+}
+

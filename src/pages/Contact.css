@@ -1,0 +1,236 @@
+.contact-page {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-container {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  border: 2px solid #c66302;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(198, 99, 2, 0.3);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-title {
+  color: #d4af37;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.title-underline {
+  width: 200px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #c66302, transparent);
+  margin: 0 auto 20px;
+}
+
+.contact-subtitle {
+  color: #c66302;
+  font-size: 1.3rem;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-form {
+  color: #d0d0d0;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  color: #d4af37;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #c66302;
+  border-radius: 6px;
+  color: #f5f5f5;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d87a1a;
+  box-shadow: 0 0 15px rgba(198, 99, 2, 0.3);
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  accent-color: #c66302;
+}
+
+.checkbox-group span {
+  color: #d0d0d0;
+  font-size: 1rem;
+}
+
+.contact-info-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: rgba(198, 99, 2, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(198, 99, 2, 0.3);
+}
+
+.contact-info-section h3 {
+  color: #c66302;
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.submit-button,
+.clear-button {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button {
+  background: #c66302;
+  color: #fff;
+}
+
+.submit-button:hover {
+  background: #d87a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(198, 99, 2, 0.5);
+}
+
+.clear-button {
+  background: #444;
+  color: #fff;
+}
+
+.clear-button:hover {
+  background: #666;
+  transform: translateY(-2px);
+}
+
+.form-footer {
+  text-align: center;
+  color: #d4af37;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(198, 99, 2, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 20px 10px;
+  }
+  
+  .contact-container {
+    padding: 30px 20px;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+  
+  .contact-info-section {
+    padding: 20px;
+  }
+  
+  .contact-info-section h3 {
+    font-size: 1.1rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .submit-button,
+  .clear-button {
+    width: 100%;
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  .form-footer {
+    font-size: 1rem;
+  }
+}
+

@@ -1,0 +1,154 @@
+.curtain-reveal-container {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #c66302 0%,
+    #d87a1a 20%,
+    #c66302 40%,
+    #a84f00 60%,
+    #c66302 80%,
+    #d87a1a 100%
+  );
+  z-index: 10;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.curtain-left {
+  left: 0;
+  transform-origin: left;
+  border-right: 3px solid #8b4500;
+}
+
+.curtain-right {
+  right: 0;
+  transform-origin: right;
+  border-left: 3px solid #8b4500;
+}
+
+.curtain-fold {
+  position: absolute;
+  top: 0;
+  width: 33.33%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.curtain-left .curtain-fold:nth-child(1) { left: 0; }
+.curtain-left .curtain-fold:nth-child(2) { left: 33.33%; }
+.curtain-left .curtain-fold:nth-child(3) { left: 66.66%; }
+
+.curtain-right .curtain-fold:nth-child(1) { left: 0; }
+.curtain-right .curtain-fold:nth-child(2) { left: 33.33%; }
+.curtain-right .curtain-fold:nth-child(3) { left: 66.66%; }
+
+.curtain-tassel {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 120px;
+  transform: translateY(-50%);
+  background: linear-gradient(180deg, #d4af37 0%, #b8941f 100%);
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.curtain-tassel::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid #b8941f;
+}
+
+.curtain-tassel::after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #d4af37;
+  border-radius: 50%;
+}
+
+.tassel-left {
+  right: 10px;
+}
+
+.tassel-right {
+  left: 10px;
+}
+
+.curtain-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  padding: 20px;
+}
+
+.reveal-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #d4af37;
+  background: rgba(0, 0, 0, 0.8);
+  border: 3px solid #c66302;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.reveal-button:hover {
+  background: #c66302;
+  color: #000;
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 0 20px rgba(198, 99, 2, 0.8);
+}
+
+@media (max-width: 768px) {
+  .curtain-reveal-container {
+    min-height: 300px;
+  }
+  
+  .curtain-tassel {
+    width: 20px;
+    height: 80px;
+  }
+  
+  .reveal-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
