@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: '/coppola-entertainment/',
-})
+  base: mode === 'production' ? '/coppola-entertainment/' : '/',
+}))
 
