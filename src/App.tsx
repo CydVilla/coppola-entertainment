@@ -8,8 +8,10 @@ import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
+  const basename = import.meta.env.DEV ? '/' : '/coppola-entertainment';
+  
   return (
-    <Router>
+    <Router basename={basename}>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
